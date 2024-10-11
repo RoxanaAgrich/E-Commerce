@@ -18,6 +18,33 @@ Dự án này được phát triển với mục đích học hỏi và phát tr
 ### 1. Customer -> Tìm kiếm sản phẩm
 - **Mô tả**: Khách hàng có thể tìm kiếm sản phẩm bằng cách nhập từ khóa liên quan vào thanh tìm kiếm. Hệ thống sẽ trả về danh sách các sản phẩm phù hợp với từ khóa đã nhập.
 - **Mục tiêu**: Giúp khách hàng nhanh chóng tìm thấy sản phẩm họ cần.
+- **Mô tả về việc triển khai**:
+  - Khách hàng sẽ sử dụng giao diện tìm kiếm sản phẩm trên website, nơi có thanh tìm kiếm cho phép họ nhập từ khóa liên quan. 
+  - Backend sẽ nhận yêu cầu từ client, sau đó gửi truy vấn đến cơ sở dữ liệu để tìm các sản phẩm khớp với từ khóa đã nhập.
+  - Hệ thống sẽ trả về danh sách sản phẩm liên quan, sau đó hiển thị cho khách hàng.
+  
+- **Triển khai**:
+  - **Frontend**: Thanh tìm kiếm được thiết kế đơn giản, cho phép khách hàng nhập từ khóa. Kết quả tìm kiếm sẽ được hiển thị trong một danh sách sản phẩm có hình ảnh, tên, và giá.
+  - **Backend**: Sử dụng API REST để xử lý các yêu cầu từ khách hàng, sử dụng controller để gọi các service xử lý logic tìm kiếm và truy vấn sản phẩm từ cơ sở dữ liệu.
+  - **Database**: Truy vấn được thực hiện bằng cách sử dụng SQL (hoặc ORM) với câu lệnh `LIKE` để tìm kiếm các sản phẩm có tên tương tự từ khóa nhập vào.
+
+---
+
+#### **Flow Diagram**
+
+![image](https://github.com/user-attachments/assets/2cacfa24-a1a8-4cfb-91e3-c3309569006e)
+
+
+#### **Sequence Diagram**
+
+![image](https://github.com/user-attachments/assets/b8248d68-a26e-4160-99e5-47ac3b1cf753)
+
+
+#### **Class Diagram**
+
+![image](https://github.com/user-attachments/assets/c515b72d-6db4-405b-bca1-14d6e2ae56fb)
+
+---
 
 ### 2. Customer -> Xem chi tiết sản phẩm
 - **Mô tả**: Khách hàng có thể nhấp vào một sản phẩm cụ thể để xem thông tin chi tiết bao gồm mô tả, giá, hình ảnh, và đánh giá từ người dùng khác.
